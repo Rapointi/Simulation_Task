@@ -29,12 +29,13 @@ The simulator is built with **Python and SimPy** and includes testing via **Pyte
 conda create -n simenv python=3.13
 conda activate simenv
 pip install -r requirements.txt
-
+```
 
 ## Run Simulation
 
 ```bash
 python -m src.main [path_to_csv_file]
+```
 
 Preset:
 
@@ -44,7 +45,7 @@ python -m src.main data/3_simple_dependencies.csv
 python -m src.main data/4_networked_dependencies.csv
 python -m src.main data/5_ping_pong.csv
 python -m src.main data/6_long_sleep.csv
-
+```
 
 ## Run Tests
 pytest tests
