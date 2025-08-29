@@ -1,27 +1,49 @@
-## Interview Task Simulator
+# Distributed Task Simulator
 
-A discrete-event simulation environment, which simulates hosts, each with its own CPU with a certain number of cores, RAM, connected via full-duplex network link.
+A **resource-aware discrete-event simulation** for distributed task execution.  
+It models CPU, RAM, and network constraints as well as task dependencies and scheduling logic.  
+The simulator is built with **Python and SimPy** and includes testing via **Pytest**.
 
-* Simulates RAM and CPU usage with queuing and blocking behavior.
-* Models network communication traffic for distributed task execution
-* Supports task dependencies and start times
+---
 
-## Setup
-conda create -n interview_simulation python=3.13.5
-conda actiave interview_simulation
+## Features
+- Multi-host simulation with CPU, RAM, and network resources  
+- Task dependencies and queuing logic  
+- Performance evaluation of distributed workloads  
+- Configurable scenarios via CSV input files  
+- Unit tests with pytest for reliability  
 
-pip install -r requierements.txt
+---
+
+## Tech Stack
+- **Python 3.13**  
+- **SimPy** – discrete-event simulation library  
+- **pytest** – automated testing framework  
+
+---
+
+## Getting Started
+
+### Setup environment
+```bash
+conda create -n simenv python=3.13
+conda activate simenv
+pip install -r requirements.txt
 
 
 ## Run Simulation
-python -m interview_simulator_task.main [path_to_csv_file]
+
+```bash
+python -m src.main [path_to_csv_file]
 
 Preset:
-python -m interview_simulator_task.main data/2_simple_multicore.csv
-python -m interview_simulator_task.main data/3_simple_dependencies.csv
-python -m interview_simulator_task.main data/4_networked_dependencies.csv
-python -m interview_simulator_task.main data/5_ping_pong.csv
-python -m interview_simulator_task.main data/6_long_sleep.csv
+
+```bash
+python -m src.main data/2_simple_multicore.csv
+python -m src.main data/3_simple_dependencies.csv
+python -m src.main data/4_networked_dependencies.csv
+python -m src.main data/5_ping_pong.csv
+python -m src.main data/6_long_sleep.csv
 
 
 ## Run Tests
