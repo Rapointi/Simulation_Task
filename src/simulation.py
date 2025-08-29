@@ -24,7 +24,7 @@ def run_simulation(df, experiment_name):
 
     network = Network(env, logger=logger)
 
-    
+
     host_dict = {
         "host_0": host1,
         "host_1": host2
@@ -34,10 +34,8 @@ def run_simulation(df, experiment_name):
         # Assign each task to exactly one host.
         task_id = row["id"]
 
-        #host    = host1 if row["host_preference"] == "host_0" else host2
-        #host_map[task_id] = host
-
-        host = host_dict.get(row["host_preference"]) 
+        host = host_dict.get(row["host_preference"])
+        host_map[task_id] = host
 
 
         # If task has dependency, enter it as successor
